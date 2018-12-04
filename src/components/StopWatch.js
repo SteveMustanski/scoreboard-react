@@ -12,6 +12,7 @@ componentDidMount() {
   this.intervalID = setInterval(() => this.tick(), 100);
 }
 
+// if the stopwatch is unmounted, clear the intervalID
 componentWillUnmount() {
   clearInterval(this.intervalID);
 }
