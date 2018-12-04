@@ -7,8 +7,13 @@ state = {
   previousTime: 0
 };
 
+// function that fires when the stopwatch is mounted
 componentDidMount() {
   this.intervalID = setInterval(() => this.tick(), 100);
+}
+
+componentWillUnmount() {
+  clearInterval(this.intervalID);
 }
 
 // function to handle the state of the stopwatch and calculate time.
