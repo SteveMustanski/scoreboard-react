@@ -11,6 +11,7 @@ componentDidMount() {
   this.intervalID = setInterval(() => this.tick(), 100);
 }
 
+// function to handle the state of the stopwatch and calculate time.
 handleStopwatch = () => {
   this.setState(prevState => ({
     isRunning: !prevState.isRunning
@@ -20,6 +21,7 @@ handleStopwatch = () => {
   }
 }
 
+// function to calculate the elapsed time
 tick = () => {
  if (this.state.isRunning) {
    const now = Date.now();
@@ -31,10 +33,15 @@ tick = () => {
 }
 
   render() {
+
+    const seconds = Math.floor(this.state.elapsedTime / 1000);
+
     return (
       <div className="stopwatch">
         <h2>Stopwatch</h2>
-        <span className="stopwatch-time">0</span>
+        <span className="stopwatch-time">
+          { seconds }
+        </span>
         <button onClick={this.handleStopwatch}>{this.state.isRunning ? 'Stop' : 'Start'}</button>
         <button>Reset</button>
       </div>
