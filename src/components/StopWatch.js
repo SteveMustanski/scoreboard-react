@@ -32,6 +32,10 @@ tick = () => {
  }
 }
 
+handleReset = () => {
+  this.setState({elapsedTime: 0});
+};
+
   render() {
 
     const seconds = Math.floor(this.state.elapsedTime / 1000);
@@ -43,7 +47,7 @@ tick = () => {
           { seconds }
         </span>
         <button onClick={this.handleStopwatch}>{this.state.isRunning ? 'Stop' : 'Start'}</button>
-        <button>Reset</button>
+        <button onClick={this.handleReset}>Reset</button>
       </div>
     );
   }
