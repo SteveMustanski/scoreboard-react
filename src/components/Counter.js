@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // destrure props by placing propteries needed in an object passed in rather than props
 const Counter = ({index, score, changeScore}) => {
@@ -11,6 +12,13 @@ const Counter = ({index, score, changeScore}) => {
     </div>
   );
 
+}
+
+// validate that the correct number and type of props is valid
+Counter.propTypes = {
+  index: PropTypes.number,
+  score: PropTypes.number,
+  changeScore: PropTypes.func
 }
 
 export default Counter;

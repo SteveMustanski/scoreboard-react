@@ -7,3 +7,4 @@ The application consists of a scoreboard that allows for tracking player scores 
 ## Dependancies
 * react
 * react-dom
+* prop-types
