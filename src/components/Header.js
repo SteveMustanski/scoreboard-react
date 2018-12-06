@@ -15,9 +15,15 @@ const Header = ({ players, title }) => {
   );
 }
 
+// type checking on the props
 Header.propTypes = {
   title: PropTypes.string,
   players: PropTypes.arrayOf(PropTypes.object)
+}
+
+// add a default for header incase is isn't passed in
+Header.defultProps = {
+  title: 'Scoreboard'
 }
 
 export default Header;
