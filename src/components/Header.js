@@ -2,11 +2,13 @@ import React from 'react';
 import Stats from './Stats';
 import StopWatch from './StopWatch';
 
-const Header = (props) => {
+// destructure props by defining what values to pull
+// replace "props" with an object delaring the properties you want
+const Header = ({ players, title }) => {
   return (
     <header>
-    <Stats players={props.players}/>
-      <h1>{ props.title }</h1>
+    <Stats players={players}/>
+      <h1>{ title }</h1>
       <StopWatch />
     </header>
   );
